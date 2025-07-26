@@ -1,0 +1,13 @@
+{
+    "name": "client",
+    "version": "1.0.0",
+    "description": "Simple client frontend to test socket servers.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node ./src/index.js"
+    },
+    "keywords": [],
+    "author": "MahtHdz",
+    "license": "ISC",
+    "packageManager": "pnpm@10.11.0"
+}
