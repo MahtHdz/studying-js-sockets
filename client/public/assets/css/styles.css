@@ -1,0 +1,136 @@
+/* styles.css */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #111; /* fallback base color */
+}
+
+/* two blurred gradient blobs, one pink/yellow top-left and one teal/blue bottom-right */
+body::before,
+body::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(200px);
+  opacity: 0.8;
+  will-change: transform;
+}
+
+body::before {
+  width: 600px;
+  height: 600px;
+  top: -150px;
+  left: -200px;
+  background: radial-gradient(
+    circle at 30% 30%,
+    rgba(255, 106, 161, 0.8),
+    rgba(255, 214, 102, 0.6) 70%,
+    transparent 100%
+  );
+}
+
+body::after {
+  width: 700px;
+  height: 700px;
+  bottom: -200px;
+  right: -250px;
+  background: radial-gradient(
+    circle at 70% 70%,
+    rgba(69, 184, 172, 0.8),
+    rgba(14, 154, 167, 0.6) 60%,
+    transparent 100%
+  );
+}
+
+/* Noise overlay */
+body::after {
+  mix-blend-mode: screen;
+}
+
+/* glass‐morphic chat container */
+.chat-container {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  color: #fff;
+}
+
+/* rest of your existing styles… */
+.chat-container h2 {
+  text-align: center;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.5px;
+}
+
+.chat-box {
+  list-style: none;
+  max-height: 300px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-right: 0.5rem;
+}
+
+.chat-box li {
+  margin-bottom: 0.75rem;
+  padding: 0.6rem 0.8rem;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  word-wrap: break-word;
+  font-size: 0.95rem;
+}
+
+.chat-input {
+  display: flex;
+}
+
+.chat-input input {
+  flex: 1;
+  padding: 0.7rem 1rem;
+  border: none;
+  border-radius: 12px 0 0 12px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  font-size: 1rem;
+}
+
+.chat-input input::placeholder {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.chat-input button {
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 0 12px 12px 0;
+  background: rgba(255, 255, 255, 0.3);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.chat-input button:hover {
+  background: rgba(255, 255, 255, 0.5);
+}

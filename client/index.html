@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Anonymous Chat</title>
+  <link rel="icon" href="/assets/favicon.ico" type="image/x-icon" />
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css" />
+</head>
+<body>
+  <div class="chat-container">
+    <h2>Anonymous Real-Time Chat</h2>
+    <ul id="messages" class="chat-box"></ul>
+    <div class="chat-input">
+      <input id="textInput" autocomplete="off" placeholder="Type a message…" />
+      <button id="sendBtn">Send</button>
+    </div>
+  </div>
+
+  <!-- Socket.IO client library -->
+  <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  <script src="/assets/js/client.js"></script>
+</body>
+</html>
